@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Informe de correcció SALESMAN_BRANCH_AND_BOUND3</title>
+<link rel="stylesheet" href="CorrectionStyles.css">
+<link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
+<link rel="shortcut icon" href="https://www.uab.cat/Xcelerate/WAI/img/simbol.png">
+</head>
+<body>
+<div class="capcal-nav portada">
+<div class="logo-uab">
+<h1>
+<a href="https://www.uab.cat/web/universitat-autonoma-de-barcelona-1345467950436.html">Universitat Autónoma de Barcelona</a>
+</h1>
+</div>
+</div>
+<div class="menu">
+<div class="izquierda">
+<h1>Informe de correcció SALESMAN_BRANCH_AND_BOUND3</h1>
+<p><span>Assignatura:</span>Anàlisis i Diseny d'Algorismes (ADA) </p>
+<h3>Demanat per:</h3>
+<ul>
+<li>1633376 MARTÍ ESCOLÀ, Pau Pau.MartiEs@autonoma.cat</li>
+</ul>
+</div>
+<div class="derecha">
+<p style="margin-top: 25px;"><span>Data:</span>Mon Nov 20 18:40:43 2023
+</p>
+<p style="margin-top: 25px;"><span>Corrector:</span>SALESMAN_BRANCH_AND_BOUND3 (SALESMAN_BRANCH_AND_BOUND3)</p>
+<h3>Autors:</h3>
+<ul>
+<li>1633376 MARTÍ ESCOLÀ, Pau Pau.MartiEs@autonoma.cat</li>
+<li>1636134 GARCÍA CANO, Unai Unai.GarciaC@autonoma.cat</li>
+</ul>
+</div>
+</div>
+<div class="resultado">
+<p><span>Branch & bound 3 </span><span id="nota">0</span></p>
+<script>
+const notas = document.querySelectorAll("#nota");
+notas.forEach(nota => {
+const valor = parseInt(nota.textContent);
+if (valor >= 5) {
+nota.style.color = "green";
+} else {
+nota.style.color = "red";
+}
+});
+</script>
+</div>
+<div class="fitxersEnviatsAlServidor">
+<h3>Fitxers enviats al servidor:</h3><ul><li>x64\Release\GraphApplication.exe</li>
+<li>GraphApplication\GraphApplication.cpp</li>
+<li>GraphApplication\Graph.h</li>
+<li>GraphApplication\BranchAndBound.cpp</li>
+</ul>
+</div>
+<div class="descripcioDeLaCorreccio">
+<h3>Descripció de la correcció</h3>
+<BR>
+</div>
+<div class="listaPruebas">
+<h3>Filtres de proves:</h3>
+<button class="boton" data-propiedad="correcta" onclick="toggleVisibility(this)" role="button">Correctes</button>
+<button class="boton" data-propiedad="incorrecta" onclick ="toggleVisibility(this)" role="button">Incorrectes</button>
+<script>
+function toggleVisibility(button) {
+var elementos = document.getElementsByClassName('elemento');
+var botones = document.getElementsByTagName('button');
+button.classList.toggle('active');
+var botonesActivos = [];
+for (var i = 0; i < botones.length; i++) {
+if (botones[i].classList.contains('active')) {
+botonesActivos.push(botones[i]);
+}
+}
+for (var i = 0; i < elementos.length; i++) {
+var propiedades = elementos[i].getAttribute('data-propiedades').split(' ');
+var mostrar = true;
+for (var j = 0; j < botonesActivos.length; j++) {
+var propiedadBoton = botonesActivos[j].getAttribute('data-propiedad');
+if (propiedades.includes(propiedadBoton)) {
+mostrar = false;
+break;
+}
+}
+elementos[i].hidden = !mostrar;
+}
+}
+</script>
+<h3>Llista de proves:</h3>
+<ul>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_1">Prova Salesman Branch & Bound 3Simple<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_2">Prova Salesman Branch & Bound 3GreedyNoOptimo<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_3">Prova Salesman Branch & Bound 3RepeatVertex<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_4">Prova Salesman Branch & Bound 3AfterEnd<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_5">Prova Salesman Branch & Bound 3Graf10_20_3<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_6">Prova Salesman Branch & Bound 3Graf10_20_5<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_7">Prova Salesman Branch & Bound 3Graf10_20_6<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_8">Prova Salesman Branch & Bound 3Graf10_40_4<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_9">Prova Salesman Branch & Bound 3graf20_100_4<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_10">Prova Salesman Branch & Bound 3graf30_300_8<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_11">Prova Salesman Branch & Bound 3Graf50_200_6<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_12">Prova Salesman Branch & Bound 3Graf50_200_7C<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_13">Prova Salesman Branch & Bound 3Graf100_200_17<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+</ul>
+<script>
+function mostrarElementos(clase) {
+var elementos = document.getElementsByClassName(clase);
+for (var i = 0; i < elementos.length; i++) {
+var liElemento = elementos[i].closest('li');
+var aDestino = liElemento.querySelector('a');
+var aReferencia = aDestino.href;
+var aSeccion = document.getElementsByName(aReferencia.split('#')[1]);
+var padre = aSeccion[0].parentNode;
+if (liElemento.style.display === 'none') {
+liElemento.style.display = 'list-item';
+padre.style.display = 'block';
+} else {
+liElemento.style.display = 'none';
+padre.style.display = 'none';
+}
+}
+}
+</script>
+</div>
+<div class="tests">
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_1">
+<h3>Prova Salesman Branch & Bound 3Simple</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Simple.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Simple.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Simple.TRK"</p>
+<p> Temps de referència: 8.59e-05seg.<br>
+Temps de execució máxim: 0.000859seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\Simple_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_2">
+<h3>Prova Salesman Branch & Bound 3GreedyNoOptimo</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\GreedyNoOptimo.GR<br>
+Fitxer amb les visites: "TestSalesMan\\GreedyNoOptimo.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\GreedyNoOptimo.TRK"</p>
+<p> Temps de referència: 0.0002675seg.<br>
+Temps de execució máxim: 0.002675seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\GreedyNoOptimo_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_3">
+<h3>Prova Salesman Branch & Bound 3RepeatVertex</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\RepeatVertex.GR<br>
+Fitxer amb les visites: "TestSalesMan\\RepeatVertex.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\RepeatVertex.TRK"</p>
+<p> Temps de referència: 0.0003368seg.<br>
+Temps de execució máxim: 0.003368seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\RepeatVertex_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_4">
+<h3>Prova Salesman Branch & Bound 3AfterEnd</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\AfterEnd.GR<br>
+Fitxer amb les visites: "TestSalesMan\\AfterEnd.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\AfterEnd.TRK"</p>
+<p> Temps de referència: 0.0002117seg.<br>
+Temps de execució máxim: 0.002117seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\AfterEnd_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_5">
+<h3>Prova Salesman Branch & Bound 3Graf10_20_3</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_20_3.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_20_3.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_3.TRK"</p>
+<p> Temps de referència: 0.0002028seg.<br>
+Temps de execució máxim: 0.002028seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\Graf10_20_3_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_6">
+<h3>Prova Salesman Branch & Bound 3Graf10_20_5</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_20_5.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_20_5.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_5.TRK"</p>
+<p> Temps de referència: 0.0002471seg.<br>
+Temps de execució máxim: 0.002471seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Time out
+<dd>
+<p> Correction of the test failed due to a out of time. Maximum time of 2s. exceded.<br>
+ EXCEPTION TIME OUT 2.000000.Kill command: "GraphApplication.exe" Outputs\Graf10_20_5_SalesmanBranchAndBound3_Out.txt BranchAndBound3 TestSalesMan\Graf10_20_5.GR TestSalesMan\Graf10_20_5.VIS Outputs\Graf10_20_5_SalesmanBranchAndBound3.TRK</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_7">
+<h3>Prova Salesman Branch & Bound 3Graf10_20_6</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_20_6.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_20_6.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_6.TRK"</p>
+<p> Temps de referència: 0.0002406seg.<br>
+Temps de execució máxim: 0.002406seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\Graf10_20_6_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_8">
+<h3>Prova Salesman Branch & Bound 3Graf10_40_4</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_40_4.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_40_4.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_40_4.TRK"</p>
+<p> Temps de referència: 0.0002065seg.<br>
+Temps de execució máxim: 0.002065seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\Graf10_40_4_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_9">
+<h3>Prova Salesman Branch & Bound 3graf20_100_4</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\graf20_100_4.GR<br>
+Fitxer amb les visites: "TestSalesMan\\graf20_100_4.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\graf20_100_4.TRK"</p>
+<p> Temps de referència: 0.0002191seg.<br>
+Temps de execució máxim: 0.002191seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\graf20_100_4_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_10">
+<h3>Prova Salesman Branch & Bound 3graf30_300_8</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\graf30_300_8.GR<br>
+Fitxer amb les visites: "TestSalesMan\\graf30_300_8.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\graf30_300_8.TRK"</p>
+<p> Temps de referència: 0.0003726seg.<br>
+Temps de execució máxim: 0.003726seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\graf30_300_8_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_11">
+<h3>Prova Salesman Branch & Bound 3Graf50_200_6</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf50_200_6.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf50_200_6.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_6.TRK"</p>
+<p> Temps de referència: 0.0002823seg.<br>
+Temps de execució máxim: 0.002823seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\Graf50_200_6_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_12">
+<h3>Prova Salesman Branch & Bound 3Graf50_200_7C</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf50_200_7C.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf50_200_7C.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_7C.TRK"</p>
+<p> Temps de referència: 0.0003869seg.<br>
+Temps de execució máxim: 0.003869seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Time out
+<dd>
+<p> Correction of the test failed due to a out of time. Maximum time of 2s. exceded.<br>
+ EXCEPTION TIME OUT 2.000000.Kill command: "GraphApplication.exe" Outputs\Graf50_200_7C_SalesmanBranchAndBound3_Out.txt BranchAndBound3 TestSalesMan\Graf50_200_7C.GR TestSalesMan\Graf50_200_7C.VIS Outputs\Graf50_200_7C_SalesmanBranchAndBound3.TRK</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_13">
+<h3>Prova Salesman Branch & Bound 3Graf100_200_17</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf100_200_17.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf100_200_17.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf100_200_17.TRK"</p>
+<p> Temps de referència: 2.63795seg.<br>
+Temps de execució máxim: 26.3795seg.<br>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION LeerTiempo: No se ha podido leer el tiempo del fichero: Outputs\Graf100_200_17_SalesmanBranchAndBound3_Out.txt</p>
+
+</dd>
+</ul><br></div>
+</div>
+<div class="pieDePagina">
+<div class="izquierda">
+<h3>Demanat per:</h3>
+<ul>
+<li>1633376 MARTÍ ESCOLÀ, Pau Pau.MartiEs@autonoma.cat</li>
+</ul>
+</div>
+<div class="derecha">
+<h3>Autors:</h3>
+<ul>
+<li>1633376 MARTÍ ESCOLÀ, Pau Pau.MartiEs@autonoma.cat</li>
+<li>1636134 GARCÍA CANO, Unai Unai.GarciaC@autonoma.cat</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
